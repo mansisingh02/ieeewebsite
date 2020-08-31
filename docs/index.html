@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+    <html>
+    <head> 
+        <title></title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    </head>
+    <body>
+        <style type="text/css">
+
+            /* Required for full background image */
+
+            html,
+            body,
+            header,
+            #intro-section {
+                height: 100%;
+            }
+
+            @media (max-width: 740px) {
+                html,
+                body,
+                header,
+                #intro-section {
+                    height: 100vh;
+                }
+            }
+
+            .top-nav-collapse, .page-footer {
+                background-color: #563e91 !important;
+            }
+
+            .navbar:not(.top-nav-collapse) {
+                background: transparent !important;
+            }
+
+            @media (max-width: 991px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: #563e91 !important;
+                }
+            }
+
+            .rgba-gradient {
+                background: rgba(35, 7, 77, 0.6);
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, rgba(204, 83, 51, 0.6), rgba(35, 7, 77, 0.6));
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+
+            .img-gradient:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
+                /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* Opera 11.10+ */
+                /* IE10+ */
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 47, 75, 0.5)), to(rgba(220, 66, 37, 0.5)));
+                background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+                /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000', GradientType=0);
+                /* IE6-9 */
+            }
+
+            img{ max-width:100%;}
+
+.gallery_box li{ width:33.333333%; max-width: 100% ; display:inline-block; float: left; text-align: center; overflow: hidden;    position: relative;}
+.gallery_box{ padding:0;display: flow-root;}
+
+.gallery_box li:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.gallery_box li img{-webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;}
+.gallery_box li:nth-child(even) {
+    height: 304px;
+}
+.gallery_box li:nth-child(odd) {
+    height: 438px; 
+}
+.gallery_box li:nth-child(odd) .box_data{ background:rgba(0,0,0,0.17) }
+.gallery_box li:nth-child(even) .box_data{ background:rgba(0,44,255,0.27) }
+.gallery_box .box_data{ position:absolute; top: 0; left: 0; right:0; bottom:0; color:#fff;}
+.gallery_box .box_data span{ position:absolute; top: 50%; transform: translateY(-50%); left:0 ; right:0; font-size:24px;}
+.gallery_box li:hover .box_data{ background:rgba(255,0,39,0.55)}
+
+        </style>
+        <header>
+  <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Navbar</a>
+
+       
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home" data-offset="90">Home</a>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about us" data-offset="90">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Our events" data-offset="90">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Past events" data-offset="90">Our Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Board Members" data-offset="30">Board Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact us" data-offset="90">Contact Us</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+	<br>
+	<br>
+        <!-- Navbar -->
+        <!-- Full Page Intro -->
+        <div id="intro-section" class="view">
+            <video class="video-intro" poster="https://media4.picsearch.com/is?mF6y-tyjxB6qpgSUz8xLTfjIutjhmd6akcrl6xoY57k&height=304" playsinline
+            autoplay muted loop>
+            <source src="https://mdbootstrap.com/img/video/animation.mp4" type="video/mp4">
+            </video>
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+                <!-- Content -->
+                <div class="container px-md-3 px-sm-0">
+                    <!--Grid row-->
+                    <div class="row wow fadeIn">
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-4 black-text text-center wow fadeIn">
+			    <img class="rounded-circle img-fluid" src="header.png" alt="Logo" align="center">
+
+  				<h2 class><b>IEEE Professional Communication Society</b> </h2>
+                            <hr class="hr-light my-4 w-75">
+                            <h6 class="subtext-header mt-2 mb-3">Masters Of Communication</h6>
+                            </a>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+        </div>
+        <!-- Full Page Intro -->
+    </header>
+
+    <!--Main layout-->
+    <main>
+
+        <!--Section: about-->
+        <section id="about us" class="py-5">
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Section heading -->
+                <h1 class="h1-responsive font-weight-bold text-center mb-5">About Us</h1>
+		 <hr class="hr-black my-4 w-75">
+                <!-- Section description -->
+                <p class="lead black-text text-center w-responsive mx-auto mb-5">"The art of communication is the language of leadership."<br>
+
+?We believe in making an individual a master of words, a master of their communication skills. <br> Our objective is to raise the morale of students and <br> work towards creating a society of confident and ambitious people.<br>
+
+Starting out as a small initiative, today we are proud to be <br> one of the best chapters in VIT, with hopes of growing and <br>achieving even greater heights.  
+</p>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-5 text-center text-lg-left">
+                        <img class="img-fluid" src="https://static.wixstatic.com/media/062500_91452796fbc841428321cac14e64b485~mv2.png/v1/fill/w_212,h_86,al_c,q_85,usm_0.66_1.00_0.01/ieee%20pcs%20new%20logo_edited.webp" alt="Sample image">
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-7">
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-1">
+                                <i class="fa fa-mail-forward fa-lg black-text"></i>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-xl-10 col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">Our working principle</h5>
+                                <p class="grey-text">• <b>IEEE PCS</b> helps its members to develop their skills both technically and as great word masters.<br>
+
+• <b>IEEE PCS</b> will provide resources in all possible Resources and motivate them to excel in technical and orating fields.<br>
+
+• They will be taking up events which will be both mind boggling and highly innovative.<br>
+
+•<b>IEEE PCS</b> will also help and guide them towards technical communication and how that will benefit engineers in the long run.<br>
+
+</p>
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-1">
+                                <i class="fa fa-mail-forward fa-lg purple-text"></i>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-xl-10 col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">Our background </h5>
+                                <p class="grey-text">IEEE-Professional Communication Society is a place where communication <br>
+meets technology. IEEE-PCS
+is a welcoming family <br> and this reflects when we participate in literary fests <br>
+and often emerge as victors due to our commendable team spirit. Our 4 departments, <br>
+or must we say, our 4 pillars are: Management, Editorial, Design, and Technical teams <br>
+who work towards achieving one common goal: to become 'Masters of Communication'.<br> </p>
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!-- Grid column -->
+                            <div class="col-1">
+                                <i class="fa fa-mail-forward fa-lg purple-text"></i>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-xl-10 col-md-11 col-10">
+                                <h5 class="font-weight-bold mb-3">Our vision</h5>
+                                <p class="grey-text mb-0">We as members of the chapter resonate with the quote: <br>
+"The art of communication is the language of leadership" and so, we hone our <br>
+communication skills to become better orators and in turn, better leaders.</p>
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!--Grid row-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Container -->
+
+        </section>
+        <!--Section: about-->
+
+        <!--Section: projects-->
+        <section id="Our events" class="text-center py-5" style="background-color: #eee;">
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Section heading -->
+                <h1 class="h1-responsive font-weight-bold mb-5">Our events </h1>
+		<hr class="hr-black my-4 w-75">
+                <!-- Section description -->
+                <p class="grey-text w-responsive mx-auto mb-5">
+.</p>
+
+                <!-- Grid row -->
+                <div class="row text-center">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="https://scontent-iad3-1.cdninstagram.com/v/t51.29350-15/118287307_324103381971794_4650430358418629610_n.jpg?_nc_cat=110&_nc_sid=8ae9d6&_nc_ohc=i3FJ9_kzXqYAX9uYopN&_nc_ht=scontent-iad3-1.cdninstagram.com&oh=0ab3790d8bd53a53edffc1f267849173&oe=5F7423B5" class="img-fluid" alt="project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3">PlaceIt</h4>
+                            <p class="grey-text"></p>
+ 			    <p class="grey-text">With an interactive session with placed students,motivational speakers and much more, PlaceIt is an event that promises
+to leave you inspired, motivated and give you more clarity about the placement procedure.Place-It brings speakers across all branches so that every student's doubts  can be addressed, at one place, on one stage.
+                           <br> <a class="btn btn-blue btn-sm"><i class="fa fa-clone left"></i> Go to the details</a>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="https://scontent-iad3-1.cdninstagram.com/v/t51.29350-15/118381130_321687255912416_4451458468461280506_n.jpg?_nc_cat=102&_nc_sid=8ae9d6&_nc_ohc=57XDAPqNtr4AX_tn3yr&_nc_ht=scontent-iad3-1.cdninstagram.com&oh=ed05da7ce27a2ad063489d147510224e&oe=5F71D672" class="img-fluid" alt="project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div> 
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3">Technical Housie </h4>
+                            <p class="grey-text">Technical Housie is one of the most exuberant events held in VIT and is mirrored as the usual Housie game but through an interesting technological vortex. The participants are required to choose the correct options from the set of answers provided and simultaneously fold the respective number of the option chosen on the Housie card. The ones who meet the respective requisites on their cards are declared as the winners in those respective requisites. Time, knowledge and a pinch of luck are all that you need.
+</p>
+                            <a class="btn btn-blue btn-sm"><i class="fa fa-clone left"></i> Go to the details</a>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-md-6">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="https://scontent-iad3-1.cdninstagram.com/v/t51.29350-15/117837337_979954795750169_4940726942762401191_n.jpg?_nc_cat=101&_nc_sid=8ae9d6&_nc_ohc=zjpQ3LSMZ5oAX8vSDYq&_nc_ht=scontent-iad3-1.cdninstagram.com&oh=2e124d3494657f8067eafad772f2b166&oe=5F7341E8" alt="Sample project image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Excerpt-->
+                        <div class="card-body pb-0">
+                            <h4 class="font-weight-bold my-3">1300 reasons why</h4>
+                            <p class="grey-text">300 Reasons Why, an opportunity to use your binge watching skills of TV shows to decipher and brainstorm an exciting set of riddles.
+ There are 2 rounds. Round 1 starts with your team getting 100 virtual coins to spend on various mini games to be played. The team with maximum points proceeds ahead.
+ </p>
+                            <a class="btn btn-blue btn-sm"><i class="fa fa-clone left"></i>Click here for groups</a>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Container -->
+
+        </section>
+        <!--Section: projects-->
+
+        <!--Section: ideology-->
+        <section id="Past events" class="text-center py-5">
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Section heading -->
+                <h1 class="h1-responsive font-weight-bold mb-5">Previous events</h1>
+		<hr class="hr-black my-4 w-75">
+                <!-- Section description -->
+                <p class="grey-text w-responsive mx-auto mb-5"> Simple, smart , unique and efficient ideas to conduct events, with effective implementation is something that we strongly believe in. Being a technicalXcommunication based chapter, our vision is to consistently deliver the best events for the participants.</p>
+
+
+            <!--Grid column-->
+	                <div class="col-lg-4 col-md-12 mb-8">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade">
+                        <img class="card-img-top" src="codet.jpeg"
+                        alt="Card image cap">
+                
+                    </div>
+                     <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">CODE T<>ERROR</></h4>
+                        <!-- Text -->
+                        <p class="card-text" "black-text w-responsive mx-auto mb-5">
+                     
+					      This lockdown, IEEE-PCS, brings to you an opportunity you don't want to miss! It's time to take a </br> from being scared of coding for() you can overcome your fears or simply practice while() taking the ultimate test to your coding skills. In addition, you stand a chance to be recognised by DSW and receive certificates of excellence from them.</p>
+
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-8">
+
+
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+	     <!--Grid column-->
+	                <div class="col-lg-4 col-md-12 mb-8" align="center">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade">
+                        <img class="card-img-top" src="footpool.jpeg"
+                        alt="Card image cap">
+                        <a>
+                            <div class="mask img-gradient"></div>
+                        </a>
+                    </div>
+			   <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">FOOTPOOL</h4>
+                        <!-- Text -->
+                        <p class="card-text" "black-text w-responsive mx-auto mb-5">
+                     
+					     The most famous outdoor sport and an unparalleled indoor game have a lovechild that has made it's way into Riviera 2019.
+Footpool is a combination of Football and Pool, except that it has the best of both. It's a perfect mix of ball handling, cleverness and fun. Played on an oversized table with real soccer balls, this game is a 1 vs 1 event filled with whole new levels of fun and awesomeness.
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-8" align="center">
+
+
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+			     <!--Grid column-->
+	                <div class="col-lg-4 col-md-12 mb-8" margin-left:"25%">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade">
+                        <img class="card-img-top" src="tale.jpeg"
+                        alt="Card image cap">
+                        <a>
+                            <div class="mask img-gradient"></div>
+                        </a>
+                    </div>
+			   <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">TALE A SENTENCE</h4>
+                        <!-- Text -->
+                        <p class="card-text" "black-text w-responsive mx-auto mb-5">
+                     
+					    Christina Baldwin has rightly said “Words are how we think; Stories are how we link”. A perfect story is an amalgamation of ideas, narration, situations and climax. Can you express your imagination in the form of writings? Do jumbled words game excite you? For all of those who do, IEEE-PCS has incubated the event, Tale a Sentence. Come to TT-305 and join us for an evening full of fun and creativity
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-8" margin-left:"25%">
+
+
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+    <!-- Container -->
+</section>
+
+<!--Section: articles-->
+<section id="Board Members" class="py-5" style="background-color: #eee;">
+<div>
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade">
+                        <img class="card-img-top" src="board.jpeg" alt="Card image cap">
+                        
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">Board Members</h4>
+                        <!-- Text -->
+                        <p class="card-text" "black-text w-responsive mx-auto mb-5">
+                    Current Board Members-<br>
+		   Pulkit Singhal-Chairperson<br>
+		   Akshit Sawnani-Vice Chairperson<br>
+		   Sai Pranav Tavva-General Secretary<br>
+		   Bhuvanjeet Singh Gandhi-Technical and Design Chair<br>
+		   Hinal Vithlani-Editorial & Documentation Chair<br>
+		  Janhavi  R Jagtap-Management Chair<br>
+		   Priyanshu Trivedi-Finance & Sponsorship Chair<br>
+		   Anusuiya Bora -Publicity & Outreach Chair<br>
+	           Anshuman Mishra-Human Resources & Operations Chair<br> 
+		   Rohit R Patekar-Events Head
+					      </p>
+
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div>
+
+
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+    <!-- Container -->
+</section>
+<!--Section: articles-->
+		
+
+</div>
+<!-- Container -->
+
+</section>
+
+
+<!--Section: articles-->
+
+<!--Section: contact-->
+<section id="contact us" class="py-5" style="background-color: #eee;">
+
+    <div class="container">
+
+        <!-- Section heading -->
+	<img src="vitlogo.png">
+        <h1 class="h1-responsive font-weight-bold text-center mb-5">Contact Us</h1>
+        <hr class="hr-light my-4 w-75">
+        <!-- Section description -->
+        <p class="text-center w-responsive mx-auto mb-5">Email us in case of an enquiry.</p>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-9 mb-md-0 mb-5">
+
+                <form>
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="contact-name" class="form-control">
+                                <label for="contact-name" class="">Your name</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="contact-email" class="form-control">
+                                <label for="contact-email" class="">Your email</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="contact-Subject of enquiry/concern" class="form-control">
+                                <label for="contact-Subject" class="">Subject of enquiry/concern</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3"></textarea>
+                                <label for="contact-message">Your message</label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </form>
+
+                <div class="text-center text-md-left">
+                    <a class="btn btn-blue btn-md">Send</a>
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <i class="fa fa-map-marker fa-2x blue-text"></i>
+                        <p align="left">IEEE PCS <br>• VIT Vellore <br>• Tamil Nadu<br> • India </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone fa-2x mt-4 blue-text"></i>
+                        <p>+ 887 0855 940</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope fa-2x mt-4 blue-text"></i>
+                        <p class="mb-0">ieeepcs@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+
+</section>
+<!--Section: contact-->
+
+</main>
+<!--Main layout-->
+
+<!-- Footer -->
+<footer class="page-footer font-small pt-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                    <i class="fab fa-facebook"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                    <i class="fab fa-twitter"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                    <i class="fab fa-google-plus"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                    <i class="fab fa-linkedin"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-dribbble mx-1">
+                    <i class="fab fa-dribbble"> </i>
+                </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+    
+    <!-- Copyright -->
+
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
